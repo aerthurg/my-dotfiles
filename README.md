@@ -65,7 +65,7 @@ As you can see, besides HTML, CSS, JavaScript, TypeScript, Python and Go, also D
 
 Note: *To begin the installation process you just need to open `nvim` after replacing your `init.nvim` file by my customized `init.lua` file*.
 
-## Pyriht Environment Configuration
+## Pyright Environment Configuration
 
 To setup a custom virual environment as the interpreter for a python project on Kickstart Neovim, to avoide problems when importing third-party packages, you can create a `pyrightconfig.json` file in your project directory. Let's say you've created a virtualenv called `venv` at your project main directory.
 
