@@ -430,7 +430,6 @@ local servers = {
   cssls ={},
   tsserver = {},
   pyright = {},
-  gopls = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
