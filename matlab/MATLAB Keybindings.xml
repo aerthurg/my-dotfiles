@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomKeySet derivedfrom="Emacs" modifieddefault="false">
+   <Context id="Global">
+      <Action id="inc-search-forward"/>
+      <Action id="page-down">
+         <Stroke code="VK_PAGE_DOWN"/>
+      </Action>
+      <Action id="paste-excel-data">
+         <Stroke code="VK_V" ctrl="on" shift="on"/>
+      </Action>
+      <Action id="save">
+         <Stroke code="VK_S" ctrl="on"/>
+      </Action>
+      <Action id="copy-to-clipboard">
+         <Stroke code="VK_C" ctrl="on"/>
+      </Action>
+      <Action id="paste-from-clipboard">
+         <Stroke code="VK_V" ctrl="on"/>
+      </Action>
+      <Action id="save-workspace">
+         <Stroke code="VK_S" ctrl="on" shift="on"/>
+      </Action>
+   </Context>
+</CustomKeySet>
