@@ -1,84 +1,90 @@
 # My Dotfiles
-In this repository I'm tracking my dotfiles, mainly my customized Kickstart Neovim setup, with IDE features for HTML, CSS, JS/TypeScript, Python and GoLang.
 
-I used this approach for setting up my Neovim configuration to work well on Windows 11, but it can easily be replicated on Linux/OSx maybe even without any modification.
+In this repository I'm managing the dotfiles I use to setup my entire development workflow using three main applications, namely: a) Alacritty; b) Zellij; and c) Neovim. I use this setup to code mainly in HTML, CSS, JavaScript and Python, so expect LSPs cofigured for liting, formatting, and completion for these languages. Additionally, I use this entire setup on Pop!_OS, which is a Ubuntu-based linux distribution, so for porting it to MacOS or Windows, do your own research (it should be quite easy).
 
+# Table of Contents
++ Alacritty Installation and Setup
++ Zellij Installation and Setup
++ Neovim Installation and Setup (with LazyVim)
 
-## Contents
+## Alacritty Installation and Setup
+Alacritty is a cross-platform terminal emulator. You should follow the instructions from the official Alacritty <a href="https://github.com/alacritty/alacritty" target="blank">GitHub repository</a>. After the installation process, you should create a directory called *alacritty* under the *~/.config/* directory in order to customize your alacritty installation.
 
-- [Installation](#installation)
-- [Neovim Configuration](#neovim-configuration)
-- [Updating the Repository](#updating-the-repository)
-- [License](#license)
+Now you can copy my *alacritty.toml* file to your *~/.config/alacritty* directory in order to use my customizations in your Alacritty installation. The only customizations I made to my Alacritty installation were the following:
++ Modified window's padding, opacity, and startup mode.
++ Modified font to JetBrainsMonoNerdFont with size of 12 (download and install this font!).
++ Changed the colorscheme to Solarized-Osaka.
 
-## Installation
+The screenshot below shows how my Alacritty installation looks like:
 
-To use these dotfiles on your machine, follow the steps below:
+<center>
+  <img src="https://i.ibb.co/Hfysf0W1/image.png" width="630" />
+</center>
 
-1. Clone the repository to your local machine:
+## Zellij Installation and Setup
+Zellij is a powerful rust-based terminal workspace manager that is really useful for managing multiple panels and tabs in a same terminal session. You should follow the installation instructions present in the official <a href="https://zellij.dev">Zellij website</a> (I recommend doing it using Rust's cargo package manager).
 
-   ```shell
-   git clone https://github.com/vazryag/my-dotfiles.git
-   ```
+After installing Zellij using your prefered method, create the *~/.config/zellij* directory in your system, and then populate it with a *config.kdl* file. This file hosts the entire configuration of your Zellij installation and is provided in the official website (as well as in this repository)the installation.
 
-2. Change into the dotfiles directory:
+The only change I made in this configuration file was to change the color theme for "solarized-dark", which mathces pretty well with Solarized-Osaka, which is my favorite colorscheme for everything. You can do this by uncommenting the "theme" line and then setting it to "solarized-dark":
 
-   ```shell
-   cd my-dotfiles
-   ```
-
-3. Copy the custom `init.lua` file from this repository directory to your OS' Neovim config directory.
-
-* For Linux/OSx: `~/.config/nvim`
-* For Windows: `~\AppData\Local\nvim`
-
-Note: Make sure to backup your existing `init.nvim` file in case of any failure.
-
-4. Install any additional packeg in the new `init.lua` file. `Kickstart` sets up `Packer` to manage all the plugins.
-
-I've customized this script to install the following language servers by default:
-* HTML
-* CSS/SCSS
-* JavaScript & TypeScript
-* Python
-* GoLang.
-
-To modify which language servers to install by default, you'll need to edit the following part of the script:
-```lua
-local servers = {
-  html = {},
-  cssls ={},
-  tsserver = {},
-  pyright = {},
-  gopls = {},
-  lua_ls = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    },
-  },
-  docker_compose_language_service ={},
-  dockerls = {}
-}
-```
-As you can see, besides HTML, CSS, JavaScript, TypeScript, Python and Go, also Dockerfile/Compose language servers are being installed by default!
-
-Note: *To begin the installation process you just need to open `nvim` after replacing your `init.nvim` file by my customized `init.lua` file*.
-
-## Pyright Environment Configuration
-
-To setup a custom virual environment as the interpreter for a python project on Kickstart Neovim, to avoide problems when importing third-party packages, you can create a `pyrightconfig.json` file in your project directory. Let's say you've created a virtualenv called `venv` at your project main directory.
-
-```json
-{
-   "venvPath": ".",
-   "venv": "venv"
-}
-
+```kdl
+theme "solarized-dark"
 ```
 
-This file will make sure that `pyright` will look for an interpreted and it's packages at a folder called `venv/` in our project dir `.`, and all your imports and code completion will work perfectly.
+The screenshot below shows how my Zellij installation looks like in my Alacritty:
 
-## License
+<center>
+  <img src="https://i.ibb.co/xtgFXyD0/image.png" width="630" />
+</center>
 
-This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code as you see fit.
+## Neovim Installation and Setup (with LazyVim)
+
+I use Neovim as my text editor of choice. To put it in pair with modern IDEs, I also use LazyVim as my distribution of choice. It is fast, minimal, and uses Lazy, which is my favorite package manager for Neovim.
+
+Personally I use PPAs for installing Neovim, since it is a more straightforward installation process than building it from source or using Snapcraft (which I do not like). You can either install it's stable or unstable versions. I prefer using the unstable version since most of the Neovim's packages and distributions only supports recent versions of the editor.
+
+You can use one of the options below:
+
+```bash
+sudo add-apt-repository ppa:neovim-ppa/stable -y
+
+# OR
+
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
+
+# THEN
+
+sudo apt update && sudo apt install neovim
+```
+
+After installing Neovim, create the *~/.config/nvim* directory and then install LazyVim following the installation instructions in their <a href="https://www.lazyvim.org/">official website</a>. The copy my */nvim/lua* files and then replace the same folder in your installation.
+
+The main customizations I did were:
++ Installed the Solarized-Osaka colorscheme.
++ Installed *telescope.nvim* for fuzzy finding files.
++ Installed *neo-tree.nvim* for exploring project files.
++ Installed *transparent.nvim* for making *neo-tree.nvim* transparent.
++ Configured *mason-lspconfig* to ensure the following web servers are installed and properly configured:
+  + lua_ls
+  + html
+  + tailwindcss
+  + ts_ls (javascript and typescript)
+  + pyright (for static type checking)
+  + docker_compose_language_service
+  + dockerls
++ Configured *nvim-lint* for the following linters:
+  + eslint_d (javascript and typescript)
+  + pylint (python)
++ Configured *conform.nvim* for the following opinionated formatters:
+  + stylya (lua)
+  + black (python)
+  + prettier, prettierd (javascript and typescript)
+
+There are some additional configurations I made, such as some new keymaps and autocmds, all of them for executing and/or modifying some of the packages listed above. Feel free to check them in the *~/.config/nvim/lua/config/* directory and modify them based on your needs.
+
+The screenshot below shows my LazyVim setup after it's initialization in my Alacritty terminal emulator:
+
+<center>
+  <img src="https://i.ibb.co/0RdKrxHQ/image.png" width="630" />
+</center>
