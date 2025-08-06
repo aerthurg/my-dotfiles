@@ -66,20 +66,17 @@ The main customizations I did were:
 + Installed *neo-tree.nvim* for exploring project files.
 + Installed *transparent.nvim* for making *neo-tree.nvim* transparent.
 + Configured *mason-lspconfig* to ensure the following web servers are installed and properly configured:
-  + lua_ls
-  + html
+  + lua_ls (Lua)
+  + phpactor (PHP)
+  + ts_ls (JavaScript, TypeScript)
+  + volar (Vue.js)
   + tailwindcss
-  + ts_ls (javascript and typescript)
-  + pyright (for static type checking)
-  + docker_compose_language_service
-  + dockerls
 + Configured *nvim-lint* for the following linters:
-  + eslint_d (javascript and typescript)
-  + pylint (python)
+  + eslint_d (JavaScript, TypeScript)
+  + duster (PHP, Blade, Laravel)
 + Configured *conform.nvim* for the following opinionated formatters:
-  + stylya (lua)
-  + black (python)
-  + prettier, prettierd (javascript and typescript)
+  + duster (PHP, Laravel)
+  + prettierd (JavaScript, HTML, CSS, etc.)
 
 There are some additional configurations I made, such as some new keymaps and autocmds, all of them for executing and/or modifying some of the packages listed above. Feel free to check them in the *~/.config/nvim/lua/config/* directory and modify them based on your needs.
 
