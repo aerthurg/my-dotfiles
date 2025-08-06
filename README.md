@@ -60,12 +60,12 @@ sudo apt update && sudo apt install neovim
 
 After installing Neovim, create the *~/.config/nvim* directory and then install LazyVim following the installation instructions in their <a href="https://www.lazyvim.org/">official website</a>. The copy my */nvim/lua* files and then replace the same folder in your installation.
 
-The main customizations I did were:
+The main customizations I did are:
 + Installed the Solarized-Osaka colorscheme.
 + Installed *telescope.nvim* for fuzzy finding files.
 + Installed *neo-tree.nvim* for exploring project files.
 + Installed *transparent.nvim* for making *neo-tree.nvim* transparent.
-+ Configured *mason-lspconfig* to ensure the following web servers are installed and properly configured:
++ Configured *mason-lspconfig* to ensure the following language servers are installed and properly configured:
   + lua_ls (Lua)
   + phpactor (PHP)
   + ts_ls (JavaScript, TypeScript)
