@@ -75,7 +75,7 @@ The main customizations I did are:
   + eslint_d (JavaScript, TypeScript)
   + duster (PHP, Blade, Laravel)
 + Configured *conform.nvim* for the following opinionated formatters:
-  + duster (PHP, Laravel)
+  + duster (PHP, Blade, Laravel)
   + prettierd (JavaScript, HTML, CSS, etc.)
 
 There are some additional configurations I made, such as some new keymaps and autocmds, all of them for executing and/or modifying some of the packages listed above. Feel free to check them in the *~/.config/nvim/lua/config/* directory and modify them based on your needs.
