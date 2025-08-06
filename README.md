@@ -1,6 +1,6 @@
 # My Dotfiles
 
-In this repository I'm managing the dotfiles I use to setup my entire development workflow using three main applications, namely: a) Alacritty; b) Zellij; and c) Neovim. I use this setup to code mainly in HTML, CSS, JavaScript and Python, so expect LSPs cofigured for liting, formatting, and completion for these languages. Additionally, I use this entire setup on Pop!_OS, which is a Ubuntu-based linux distribution, so for porting it to MacOS or Windows, do your own research (it should be quite easy).
+In this repository I'm managing the dotfiles I use to setup my entire development workflow using three main applications, namely: a) Alacritty; b) Zellij; and c) Neovim. I use this setup to code mainly in HTML, CSS, JavaScript and PHP, so expect LSPs cofigured for liting, formatting, and completion for these languages. Additionally, I use this entire setup on Pop!_OS, which is a Ubuntu-based linux distribution, so for porting it to MacOS or Windows, do your own research (it should be quite easy).
 
 # Table of Contents
 + Alacritty Installation and Setup
