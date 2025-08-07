@@ -1,6 +1,6 @@
 # My Dotfiles
 
-In this repository I'm managing the dotfiles I use to setup my entire development workflow using three main applications, namely: a) Alacritty; b) Zellij; and c) Neovim. I use this setup to code mainly in HTML, CSS, JavaScript and PHP, so expect LSPs cofigured for liting, formatting, and completion for these languages. Additionally, I use this entire setup on Pop!_OS, which is a Ubuntu-based linux distribution, so for porting it to MacOS or Windows, do your own research (it should be quite easy).
+In this repository I'm managing the dotfiles I use to setup my entire development workflow using three main applications, namely: a) Alacritty; b) Zellij; and c) Neovim. I use this setup to code mainly in JavaScript, ERB, and Ruby, so expect LSPs cofigured for liting, formatting, and completion for these languages. Additionally, I use this entire setup on Pop!_OS, which is a Ubuntu-based linux distribution, so for porting it to MacOS or Windows, do your own research (it should be quite easy).
 
 # Table of Contents
 + Alacritty Installation and Setup
@@ -67,15 +67,17 @@ The main customizations I did are:
 + Installed *transparent.nvim* for making *neo-tree.nvim* transparent.
 + Configured *mason-lspconfig* to ensure the following language servers are installed and properly configured:
   + lua_ls (Lua)
-  + phpactor (PHP)
+  + ruby_lsp (Ruby)
   + ts_ls (JavaScript, TypeScript)
-  + volar (Vue.js)
+  + stimulus_ls (Stimulus.js)
   + tailwindcss
 + Configured *nvim-lint* for the following linters:
   + eslint_d (JavaScript, TypeScript)
-  + duster (PHP, Blade, Laravel)
+  + ruby_lsp (Ruby)
+  + herb-language-server (HTML, ERB)
 + Configured *conform.nvim* for the following opinionated formatters:
-  + duster (PHP, Blade, Laravel)
+  + ruby_lsp (Ruby)
+  + herb-language-server (HTML, ERB)
   + prettierd (JavaScript, HTML, CSS, etc.)
 
 There are some additional configurations I made, such as some new keymaps and autocmds, all of them for executing and/or modifying some of the packages listed above. Feel free to check them in the *~/.config/nvim/lua/config/* directory and modify them based on your needs.
