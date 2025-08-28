@@ -1,6 +1,6 @@
 # My Dotfiles
 
-In this repository I'm managing the dotfiles I use to setup my entire development workflow using three main applications, namely: a) Alacritty; b) Zellij; and c) Neovim. I use this setup to code mainly in JavaScript, ERB, and Ruby, so expect LSPs cofigured for liting, formatting, and completion for these languages. Additionally, I use this entire setup on Pop!_OS, which is a Ubuntu-based linux distribution, so for porting it to MacOS or Windows, do your own research (it should be quite easy).
+In this repository I'm managing the dotfiles I use to setup my entire development workflow using three main applications, namely: a) Alacritty; b) Zellij; and c) Neovim. I use this setup to code mainly in WebAssembly, Python, and Rust, so expect LSPs cofigured for liting, formatting, and completion for these languages. Additionally, I use this entire setup on Pop!_OS, which is a Ubuntu-based linux distribution, so for porting it to MacOS or Windows, do your own research (it should be quite easy).
 
 # Table of Contents
 + Alacritty Installation and Setup
@@ -62,23 +62,24 @@ After installing Neovim, create the *~/.config/nvim* directory and then install 
 
 The main customizations I did are:
 + Installed the Solarized-Osaka colorscheme.
-+ Installed *telescope.nvim* for fuzzy finding files.
-+ Installed *neo-tree.nvim* for exploring project files.
-+ Installed *transparent.nvim* for making *neo-tree.nvim* transparent.
-+ Configured *mason-lspconfig* to ensure the following language servers are installed and properly configured:
++ Installed *telescope.lua* for fuzzy finding files.
++ Installed *neo-tree.lua* for exploring project files.
++ Installed *transparent.lua* for making *neo-tree.nvim* transparent.
++ Configured *mason-lspconfig*.lua and *mason.lua* to ensure the following language servers are installed and properly configured:
+  + uv (Python)
   + lua_ls (Lua)
-  + ruby_lsp (Ruby)
-  + ts_ls (JavaScript, TypeScript)
-  + stimulus_ls (Stimulus.js)
-  + tailwindcss
+  + pylsp (Python)
+  + rust_analyzer (Rust)
+  + tailwindcss (TailwindCSS)
+  + wasm-language-tools (WebAssembly)
+  + docker-language-server (Dockerfile and Compose)
 + Configured *nvim-lint* for the following linters:
-  + eslint_d (JavaScript, TypeScript)
-  + ruby_lsp (Ruby)
-  + herb-language-server (HTML, ERB)
+  + pylsp (Python)
+  + wasm-language-tools (WebAssembly)
 + Configured *conform.nvim* for the following opinionated formatters:
-  + ruby_lsp (Ruby)
-  + herb-language-server (HTML, ERB)
-  + prettierd (JavaScript, HTML, CSS, etc.)
+  + pylsp (Python)
+  + rust_analyzer (Rust)
+  + wasm-language-tools (WebAssembly)
 
 There are some additional configurations I made, such as some new keymaps and autocmds, all of them for executing and/or modifying some of the packages listed above. Feel free to check them in the *~/.config/nvim/lua/config/* directory and modify them based on your needs.
 
