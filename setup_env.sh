@@ -19,6 +19,9 @@ pipx install python-lsp-server
 curl -LsSf https://astral.sh/uv/install.sh | sh -s
 source $HOME/.local/bin/env
 
+# installing other dependencies (3D Slicer)
+sudo apt install libglu1-mesa libopengl0 libpulse-mainloop-glib0
+
 # installing node.js via nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash -s -- --y
 \. "$HOME/.nvm/nvm.sh"
